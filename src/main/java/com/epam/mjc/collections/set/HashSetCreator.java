@@ -9,10 +9,11 @@ public class HashSetCreator {
 		for (int i = 0; i < sourceList.size(); ++i) {
 			hashSet.add(sourceList.get(i));
 			if (0 == sourceList.get(i) % 2) {
-				do {
-					sourceList.set(i, sourceList.get(i) / 2);
-					hashSet.add(sourceList.get(i));
-				} while (0 == sourceList.get(i) % 2);
+				int evenNumber = sourceList.get(i);
+				while (0 == evenNumber % 2) {
+					evenNumber /= 2;
+					hashSet.add(evenNumber);
+				}
 			} else {
 				hashSet.add(2 * sourceList.get(i));
 			}
